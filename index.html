@@ -3,39 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Saints | Mr Frog</title>
+    <title>Data Saints Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: white; text-align: center; margin: 0; padding: 0; }
-        header { padding: 50px 20px; background: linear-gradient(135deg, #2e7d32, #1b5e20); }
-        .logo { font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
-        .tagline { font-size: 1.2em; opacity: 0.8; }
-        .content { padding: 40px 20px; max-width: 800px; margin: auto; }
-        .game-card { background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h2 { color: #81c784; }
-        .btn { display: inline-block; padding: 15px 30px; background-color: #4caf50; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .btn:hover { background-color: #66bb6a; transform: scale(1.05); }
-        footer { margin-top: 50px; padding: 20px; font-size: 0.9em; opacity: 0.6; border-top: 1px solid #333; }
-        a { color: #81c784; text-decoration: none; }
+        :root {
+            /* Paleta de colores profesional */
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(255, 255, 255, 0.05); /* Efecto vidrio */
+            --accent-green: #00e676; /* Verde vibrante tipo Android/Gaming */
+            --accent-dark-green: #00c853;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            /* Fondo con un degradado radial sutil para dar profundidad */
+            background-image: radial-gradient(circle at center top, #1a3a2a, var(--bg-dark) 60%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header minimalista */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .studio-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Contenedor Principal */
+        main {
+            flex: 1; /* Ocupa el espacio disponible */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Tarjeta del juego con efecto "Glassmorphism" */
+        .game-showcase {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px); /* Desenfoca el fondo detrás de la tarjeta */
+            -webkit-backdrop-filter: blur(10px); /* Para Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .game-title {
+            font-size: 2rem;
+            margin: 0 0 15px 0;
+            color: var(--accent-green);
+        }
+
+        .game-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Botón de descarga estilo Play Store */
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(45deg, var(--accent-dark-green), var(--accent-green));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px); /* Se levanta un poco al pasar el mouse */
+            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6);
+        }
+
+        /* Footer profesional estándar */
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Ajustes para celulares pequeños */
+        @media (max-width: 480px) {
+            .game-title { font-size: 1.5rem; }
+            .game-showcase { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">DATA SAINTS</div>
-        <div class="tagline">Soluciones Tecnológicas & Entretenimiento</div>
+        <div class="studio-name">DATA SAINTS</div>
     </header>
 
-    <div class="content">
-        <div class="game-card">
-            <h2>🐸 Mr Frog: Bubble Pop Shooter</h2>
-            <p>¡Ya disponible en Google Play Store! Disfruta de una aventura clásica de disparar burbujas con niveles desafiantes y mucha diversión.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.DataSaints.BubblePopShooterMrFrog" class="btn">DESCARGAR EN PLAY STORE</a>
-        </div>
-    </div>
+    <main>
+        <section class="game-showcase">
+            <h1 class="game-title">🐸 Mr Frog</h1>
+            <p class="game-desc">
+                Nuestra ópera prima. Sumérgete en un adictivo desafío de Bubble Shooter. 
+                Diseñado para brindarte horas de diversión clásica con un toque moderno.
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.DataSaints.BubblePopShooterMrFrog" class="btn cta-button">
+                DESCARGAR EN GOOGLE PLAY
+            </a>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Data Saints. Todos los derechos reservados.</p>
-        <p><a href="/app-ads.txt">Información de Vendedor (app-ads.txt)</a></p>
+        <div>© 2026 Data Saints Studio. Todos los derechos reservados.</div>
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a> | 
+            <a href="#">Contacto</a>
+        </div>
     </footer>
 
 </body>
