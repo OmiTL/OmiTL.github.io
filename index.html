@@ -3,160 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Saints Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Data Saints Studio | Mr Frog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta de colores profesional */
-            --bg-dark: #0a0a0a;
-            --bg-card: rgba(255, 255, 255, 0.05); /* Efecto vidrio */
-            --accent-green: #00e676; /* Verde vibrante tipo Android/Gaming */
-            --accent-dark-green: #00c853;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
+            --bg-color: #0f1115;
+            --surface-color: #1a1d23;
+            --border-color: #2d333b;
+            --accent-color: #2ecc71;
+            --text-main: #ffffff;
+            --text-dim: #9ba3af;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            /* Fondo con un degradado radial sutil para dar profundidad */
-            background-image: radial-gradient(circle at center top, #1a3a2a, var(--bg-dark) 60%);
-            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Header minimalista */
         header {
-            padding: 40px 20px;
+            padding: 60px 20px 20px;
             text-align: center;
-            letter-spacing: 2px;
         }
 
-        .studio-name {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .studio-brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #fff, var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-color);
         }
 
-        /* Contenedor Principal */
         main {
-            flex: 1; /* Ocupa el espacio disponible */
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 48px;
+            max-width: 450px;
             width: 100%;
-            max-width: 600px;
+            border-radius: 8px; /* Bordes menos redondeados para un look más sólido */
         }
 
-        /* Tarjeta del juego con efecto "Glassmorphism" */
-        .game-showcase {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px); /* Desenfoca el fondo detrás de la tarjeta */
-            -webkit-backdrop-filter: blur(10px); /* Para Safari */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
         }
 
-        .game-title {
-            font-size: 2rem;
-            margin: 0 0 15px 0;
-            color: var(--accent-green);
-        }
-
-        .game-desc {
-            color: var(--text-secondary);
+        p {
+            color: var(--text-dim);
             line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* Botón de descarga estilo Play Store */
-        .cta-button {
-            display: inline-block;
-            padding: 16px 32px;
-            background: linear-gradient(45deg, var(--accent-dark-green), var(--accent-green));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
+            margin-bottom: 32px;
             font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px); /* Se levanta un poco al pasar el mouse */
-            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6);
-        }
-
-        /* Footer profesional estándar */
-        footer {
-            padding: 30px 20px;
+        .btn {
+            display: block;
+            background-color: var(--accent-color);
+            color: #000;
             text-align: center;
-            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
-            width: 100%;
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .footer-links {
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--text-dim);
             text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
+            margin: 0 12px;
         }
 
         .footer-links a:hover {
-            color: var(--accent-green);
+            color: var(--text-main);
+            text-decoration: underline;
         }
 
-        /* Ajustes para celulares pequeños */
-        @media (max-width: 480px) {
-            .game-title { font-size: 1.5rem; }
-            .game-showcase { padding: 30px 20px; }
+        .contact-info {
+            margin-top: 8px;
+            display: block;
+            color: var(--text-dim);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="studio-name">DATA SAINTS</div>
+        <div class="studio-brand">Data Saints</div>
     </header>
 
     <main>
-        <section class="game-showcase">
-            <h1 class="game-title">🐸 Mr Frog</h1>
-            <p class="game-desc">
-                Nuestra ópera prima. Sumérgete en un adictivo desafío de Bubble Shooter. 
-                Diseñado para brindarte horas de diversión clásica con un toque moderno.
-            </p>
-            <a href="https://play.google.com/store/apps/details?id=com.DataSaints.BubblePopShooterMrFrog" class="btn cta-button">
-                DESCARGAR EN GOOGLE PLAY
+        <div class="card">
+            <h1>Mr Frog</h1>
+            <p>Bubble Pop Shooter oficial. Un desafío de precisión y estrategia diseñado por Data Saints Studio.</p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.DataSaints.BubblePopShooterMrFrog" class="btn">
+                Descargar en Google Play
             </a>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <div>© 2026 Data Saints Studio. Todos los derechos reservados.</div>
+        <div>© 2026 Data Saints Studio</div>
         <div class="footer-links">
-            <a href="#">Política de Privacidad</a> | 
-            <a href="#">Contacto</a>
+            <a href="https://sites.google.com/view/mrfrog-privacy" target="_blank">Privacidad</a>
+            <a href="mailto:MrFrogShooter@gmail.com">Soporte y Contacto</a>
         </div>
+        <span class="contact-info">MrFrogShooter@gmail.com</span>
     </footer>
 
 </body>
